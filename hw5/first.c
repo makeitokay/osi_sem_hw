@@ -3,10 +3,8 @@
 //
 
 #include "utils.h"
-#include <unistd.h>
 #include <stdio.h>
-#include <sys/types.h>
-#include <stdlib.h>
+#include <string.h>
 
 const int SIZE = 5000;
 
