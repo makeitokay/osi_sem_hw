@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
     int client1 = accept(server_socket, (struct sockaddr*)&client_address, &client_address_length);
     int client2 = accept(server_socket, (struct sockaddr*)&client_address, &client_address_length);
 
-    char *buffer = malloc(sizeof(char) * 1024);
+    char buffer[1024];
 
     while (1) {
         int received = recv(client1, buffer, sizeof(buffer), 0);
@@ -59,8 +59,6 @@ int main(int argc, char* argv[]) {
             break;
         }
     }
-
-    free(buffer);
 
     close(client1);
     close(client2);

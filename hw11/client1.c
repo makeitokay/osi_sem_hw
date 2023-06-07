@@ -38,11 +38,10 @@ int main(int argc, char *argv[]) {
 
     printf("Connected to server: %s:%d\n", server_ip, port);
 
-    char* buffer = malloc(1024 * sizeof(char));
+    char buffer[1024];
     while (1) {
         printf("Message: ");
         fgets(buffer, sizeof(buffer), stdin);
-        printf("Sending %ld bytes\n", strlen(buffer));
         send(client_socket, buffer, strlen(buffer), 0);
 
         if (strcmp(buffer, "The End\n") == 0) {

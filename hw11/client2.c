@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
 
     printf("Connected to server: %s:%d\n", server_ip, port);
 
-    char* buffer = malloc(1024 * sizeof(char));
+    char buffer[1024];
     while (1) {
         int received = recv(client_socket, buffer, sizeof(buffer), 0);
         if (received < 0) {
